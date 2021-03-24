@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.809.2
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateTime-Guess", "DateTime-Guess\DateTime-Guess.csproj", "{D87E7E6A-D625-48B0-9986-F57E9D2A3ECC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F00D931D-A7BA-44D3-B4D0-F859A1D0B218}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -5,4 +5,15 @@
     <RootNamespace>DateTime_Guess</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Parsers\" />
+    <Folder Include="Assigners\" />
+    <Folder Include="Refiners\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
 </Project>
