@@ -49,7 +49,7 @@
                 string value = match.Groups.GetValueOrDefault(key).Value;
                 if (!string.IsNullOrWhiteSpace(value))
                 {
-                    tokens.Add(new Token(value, Regex.Match(key, @"/delim\d+/").Success ? "delimeter" : key));
+                    tokens.Add(new Token(value, new Regex(@"delim\d+").Match(key).Success ? "delimeter" : key));
                 }
             }
 
