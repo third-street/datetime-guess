@@ -18,18 +18,18 @@
         {
             if (format == Format.Java)
             {
-                Map.Add(new Regex(@"/^(\d|1\d|2[0-3])$/"), "H");
-                Map.Add(new Regex(@"/^([0-1]\d|2[0-3])$/"), "HH");
+                Map.Add(new Regex(@"^(\d|1\d|2[0-3])$"), "H");
+                Map.Add(new Regex(@"^([0-1]\d|2[0-3])$"), "HH");
             }
             else if (format == Format.Moment)
             {
-                Map.Add(new Regex(@"/^(\d|1\d|2[0-3])$/"), "H");
-                Map.Add(new Regex(@"/^([0-1]\d|2[0-3])$/"), "HH");
+                Map.Add(new Regex(@"^(\d|1\d|2[0-3])$"), "H");
+                Map.Add(new Regex(@"^([0-1]\d|2[0-3])$"), "HH");
             }
             else if (format == Format.Linux)
             {
-                Map.Add(new Regex(@"/^(\d|1\d|2[0-3])$/"), "%-k");
-                Map.Add(new Regex(@"/^([0-1]\d|2[0-3])$/"), "%H");
+                Map.Add(new Regex(@"^(\d|1\d|2[0-3])$"), "%-k");
+                Map.Add(new Regex(@"^([0-1]\d|2[0-3])$"), "%H");
             }
         }
     }

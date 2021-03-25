@@ -18,21 +18,21 @@
         {
             if (format == Format.Java)
             {
-                Map.Add(new Regex(@"/\d/"), "s");
-                Map.Add(new Regex(@"/\d{2}/"), "ss");
-                Map.Add(new Regex(@"/\d{3}/"), "sss");
+                Map.Add(new Regex(@"\d"), "s");
+                Map.Add(new Regex(@"\d{2}"), "ss");
+                Map.Add(new Regex(@"\d{3}"), "sss");
             }
             else if (format == Format.Moment)
             {
-                Map.Add(new Regex(@"/\d/"), "S");
-                Map.Add(new Regex(@"/\d{2}/"), "SS");
-                Map.Add(new Regex(@"/\d{3}/"), "SSS");
+                Map.Add(new Regex(@"\d"), "S");
+                Map.Add(new Regex(@"\d{2}"), "SS");
+                Map.Add(new Regex(@"\d{3}"), "SSS");
             }
             else if (format == Format.Linux)
             {
-                Map.Add(new Regex(@"/\d/"), "NA");
-                Map.Add(new Regex(@"/\d{2}/"), "NA");
-                Map.Add(new Regex(@"/\d{3}/"), "%L");
+                Map.Add(new Regex(@"\d"), "NA");
+                Map.Add(new Regex(@"\d{2}"), "NA");
+                Map.Add(new Regex(@"\d{3}"), "%L");
             }
         }
     }

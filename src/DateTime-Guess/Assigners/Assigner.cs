@@ -48,7 +48,8 @@
         /// Assign a <see cref="Token"/> a format string.
         /// </summary>
         /// <param name="token">The <see cref="Token"/> to assign.</param>
-        public virtual void Assign(Token token)
+        /// <returns>Return the <see cref="Token"/>.</returns>
+        public virtual Token Assign(Token token)
         {
             foreach (KeyValuePair<Regex, string> kvp in Map)
             {
@@ -57,6 +58,8 @@
                     token.Format = kvp.Value;
                 }
             }
+
+            return token;
         }
 
         /// <summary>

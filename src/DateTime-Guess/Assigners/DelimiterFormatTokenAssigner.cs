@@ -19,9 +19,10 @@
         }
 
         /// <inheritdoc/>
-        public override void Assign(Token token)
+        public override Token Assign(Token token)
         {
             // noop
+            return token;
         }
     }
 }

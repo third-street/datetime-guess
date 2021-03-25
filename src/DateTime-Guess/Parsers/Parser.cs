@@ -37,19 +37,18 @@
         /// <inheritdoc/>
         public ParsedResult Parse(string datetime)
         {
-            Match match = Pattern.Match(datetime);
+            Match match = _pattern.Match(datetime);
             if (!match.Success || match.Groups.Count == 0)
             {
                 return null;
             }
 
             List<Token> tokens = new();
-            foreach (string key in match.Groups.Keys)
+            foreach (Group group in match.Groups)
             {
-                string value = match.Groups.GetValueOrDefault(key).Value;
-                if (!string.IsNullOrWhiteSpace(value))
+                if (!string.IsNullOrEmpty(group.Value) && group.Name != "0")
                 {
-                    tokens.Add(new Token(value, new Regex(@"delim\d+").Match(key).Success ? "delimeter" : key));
+                    tokens.Add(new Token(group.Value, new Regex(@"delim\d+").Match(group.Name).Success ? "delimeter" : group.Name));
                 }
             }
 

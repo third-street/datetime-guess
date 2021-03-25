@@ -19,12 +19,14 @@
         }
 
         /// <inheritdoc/>
-        public override void Assign(Token token)
+        public override Token Assign(Token token)
         {
             if (TestTokenType(token))
             {
                 token.Format = (Format == Format.Moment) ? $"[{token.Value}]" : token.Value;
             }
+
+            return token;
         }
     }
 }

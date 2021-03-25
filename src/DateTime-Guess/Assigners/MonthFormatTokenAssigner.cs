@@ -18,30 +18,30 @@
         {
             if (format == Format.Java)
             {
-                Map.Add(new Regex(@"/\d{1,2}/"), "M");
-                Map.Add(new Regex(@"/\d{2}/"), "MM");
-                Map.Add(new Regex(@"/\d{1,2}st/"), "M'st'");
-                Map.Add(new Regex(@"/\d{1,2}nd/"), "M'nd'");
-                Map.Add(new Regex(@"/\d{1,2}rd/"), "M'rd'");
-                Map.Add(new Regex(@"/\d{1,2}th/"), "M'th'");
-                Map.Add(new Regex(@"/^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)$/"), "MMM");
-                Map.Add(new Regex(@"/^(January|February|March|April|May|June|July|August|September|October|November|December)$/"), "MMMM");
+                Map.Add(new Regex(@"\d{1,2}"), "M");
+                Map.Add(new Regex(@"\d{2}"), "MM");
+                Map.Add(new Regex(@"\d{1,2}st"), "M'st'");
+                Map.Add(new Regex(@"\d{1,2}nd"), "M'nd'");
+                Map.Add(new Regex(@"\d{1,2}rd"), "M'rd'");
+                Map.Add(new Regex(@"\d{1,2}th"), "M'th'");
+                Map.Add(new Regex(@"^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)$"), "MMM");
+                Map.Add(new Regex(@"^(January|February|March|April|May|June|July|August|September|October|November|December)$"), "MMMM");
             }
             else if (format == Format.Moment)
             {
-                Map.Add(new Regex(@"/\d{1,2}/"), "M");
-                Map.Add(new Regex(@"/\d{2}/"), "MM");
-                Map.Add(new Regex(@"/\d{1,2}(?:st|nd|rd|th)/"), "Mo");
-                Map.Add(new Regex(@"/^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)$/"), "MMM");
-                Map.Add(new Regex(@"/^(January|February|March|April|May|June|July|August|September|October|November|December)$/"), "MMMM");
+                Map.Add(new Regex(@"\d{1,2}"), "M");
+                Map.Add(new Regex(@"\d{2}"), "MM");
+                Map.Add(new Regex(@"\d{1,2}(?:st|nd|rd|th)"), "Mo");
+                Map.Add(new Regex(@"^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)$"), "MMM");
+                Map.Add(new Regex(@"^(January|February|March|April|May|June|July|August|September|October|November|December)$"), "MMMM");
             }
             else if (format == Format.Linux)
             {
-                Map.Add(new Regex(@"/\d{1,2}/"), "NA");
-                Map.Add(new Regex(@"/\d{2}/"), "%m");
-                Map.Add(new Regex(@"/\d{1,2}(?:st|nd|rd|th)/"), "NA");
-                Map.Add(new Regex(@"/^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)$/"), "%b");
-                Map.Add(new Regex(@"/^(January|February|March|April|May|June|July|August|September|October|November|December)$/"), "%B");
+                Map.Add(new Regex(@"\d{1,2}"), "NA");
+                Map.Add(new Regex(@"\d{2}"), "%m");
+                Map.Add(new Regex(@"\d{1,2}(?:st|nd|rd|th)"), "NA");
+                Map.Add(new Regex(@"^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)$"), "%b");
+                Map.Add(new Regex(@"^(January|February|March|April|May|June|July|August|September|October|November|December)$"), "%B");
             }
         }
     }

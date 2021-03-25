@@ -18,18 +18,18 @@
         {
             if (format == Format.Java)
             {
-                Map.Add(new Regex(@"/am|pm/"), "a");
-                Map.Add(new Regex(@"/AM|PM/"), "a");
+                Map.Add(new Regex(@"am|pm"), "a");
+                Map.Add(new Regex(@"AM|PM"), "a");
             }
             else if (format == Format.Moment)
             {
-                Map.Add(new Regex(@"/am|pm/"), "a");
-                Map.Add(new Regex(@"/AM|PM/"), "A");
+                Map.Add(new Regex(@"am|pm"), "a");
+                Map.Add(new Regex(@"AM|PM"), "A");
             }
             else if (format == Format.Linux)
             {
-                Map.Add(new Regex(@"/am|pm/"), "%P");
-                Map.Add(new Regex(@"/AM|PM/"), "%p");
+                Map.Add(new Regex(@"am|pm"), "%P");
+                Map.Add(new Regex(@"AM|PM"), "%p");
             }
         }
     }

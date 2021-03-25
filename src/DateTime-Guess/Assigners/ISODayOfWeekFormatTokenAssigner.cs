@@ -18,15 +18,15 @@
         {
             if (format == Format.Java)
             {
-                Map.Add(new Regex(@"/[1-7]/"), "F");
+                Map.Add(new Regex(@"[1-7]"), "F");
             }
             else if (format == Format.Moment)
             {
-                Map.Add(new Regex(@"/[1-7]/"), "E");
+                Map.Add(new Regex(@"[1-7]"), "E");
             }
             else if (format == Format.Linux)
             {
-                Map.Add(new Regex(@"/[1-7]/"), "%u");
+                Map.Add(new Regex(@"[1-7]"), "%u");
             }
         }
     }

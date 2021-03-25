@@ -18,24 +18,24 @@
         {
             if (format == Format.Java)
             {
-                Map.Add(new Regex(@"/\d{1,2}/"), "w");
-                Map.Add(new Regex(@"/\d{2}/"), "ww");
-                Map.Add(new Regex(@"/\d{1,2}st/"), "w'st'");
-                Map.Add(new Regex(@"/\d{1,2}nd/"), "w'nd'");
-                Map.Add(new Regex(@"/\d{1,2}rd/"), "w'rd'");
-                Map.Add(new Regex(@"/\d{1,2}th/"), "w'th'");
+                Map.Add(new Regex(@"\d{1,2}"), "w");
+                Map.Add(new Regex(@"\d{2}"), "ww");
+                Map.Add(new Regex(@"\d{1,2}st"), "w'st'");
+                Map.Add(new Regex(@"\d{1,2}nd"), "w'nd'");
+                Map.Add(new Regex(@"\d{1,2}rd"), "w'rd'");
+                Map.Add(new Regex(@"\d{1,2}th"), "w'th'");
             }
             else if (format == Format.Moment)
             {
-                Map.Add(new Regex(@"/\d{1,2}/"), "W");
-                Map.Add(new Regex(@"/\d{2}/"), "WW");
-                Map.Add(new Regex(@"/\d{1,2}(?:st|nd|rd|th)/"), "Wo");
+                Map.Add(new Regex(@"\d{1,2}"), "W");
+                Map.Add(new Regex(@"\d{2}"), "WW");
+                Map.Add(new Regex(@"\d{1,2}(?:st|nd|rd|th)"), "Wo");
             }
             else if (format == Format.Linux)
             {
-                Map.Add(new Regex(@"/\d{1,2}/"), "NA");
-                Map.Add(new Regex(@"/\d{2}/"), "%U");
-                Map.Add(new Regex(@"/\d{1,2}(?:st|nd|rd|th)/"), "NA");
+                Map.Add(new Regex(@"\d{1,2}"), "NA");
+                Map.Add(new Regex(@"\d{2}"), "%U");
+                Map.Add(new Regex(@"\d{1,2}(?:st|nd|rd|th)"), "NA");
             }
         }
     }

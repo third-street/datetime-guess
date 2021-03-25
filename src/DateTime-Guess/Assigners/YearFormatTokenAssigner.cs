@@ -18,21 +18,21 @@
         {
             if (format == Format.Java)
             {
-                Map.Add(new Regex(@"/\d{2}/"), "yy");
-                Map.Add(new Regex(@"/\d{4}/"), "yyyy");
-                Map.Add(new Regex(@"/[+-]\d{6}/"), "NA");
+                Map.Add(new Regex(@"\d{2}"), "yy");
+                Map.Add(new Regex(@"\d{4}"), "yyyy");
+                Map.Add(new Regex(@"[+-]\d{6}"), "NA");
             }
             else if (format == Format.Moment)
             {
-                Map.Add(new Regex(@"/\d{2}/"), "YY");
-                Map.Add(new Regex(@"/\d{4}/"), "YYYY");
-                Map.Add(new Regex(@"/[+-]\d{6}/"), "YYYYYY");
+                Map.Add(new Regex(@"\d{2}"), "YY");
+                Map.Add(new Regex(@"\d{4}"), "YYYY");
+                Map.Add(new Regex(@"[+-]\d{6}"), "YYYYYY");
             }
             else if (format == Format.Linux)
             {
-                Map.Add(new Regex(@"/\d{2}/"), "%y");
-                Map.Add(new Regex(@"/\d{4}/"), "%Y");
-                Map.Add(new Regex(@"/[+-]\d{6}/"), "NA");
+                Map.Add(new Regex(@"\d{2}"), "%y");
+                Map.Add(new Regex(@"\d{4}"), "%Y");
+                Map.Add(new Regex(@"[+-]\d{6}"), "NA");
             }
         }
     }

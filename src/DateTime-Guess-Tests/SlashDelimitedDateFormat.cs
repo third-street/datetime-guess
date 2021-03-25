@@ -172,7 +172,7 @@
             };
             List<string> momentResult = Guesser.GuessFormat("01/02/2020", Format.Moment);
             Assert.Equal(2, momentResult.Count);
-            Assert.Equal(momentExpectedResult, momentResult);
+            Assert.Equal(momentExpectedResult.OrderBy(s => s).ToList(), momentResult.OrderBy(s => s).ToList());
 
             List<string> linuxExpectedResult = new()
             {
@@ -181,7 +181,7 @@
             };
             List<string> linuxResult = Guesser.GuessFormat("01/02/2020", Format.Linux);
             Assert.Equal(2, linuxResult.Count);
-            Assert.Equal(linuxExpectedResult, linuxResult);
+            Assert.Equal(linuxExpectedResult.OrderBy(s => s).ToList(), linuxResult.OrderBy(s => s).ToList());
         }
 
         [Fact]
@@ -194,7 +194,7 @@
             };
             List<string> momentResult = Guesser.GuessFormat("01.02.2020", Format.Moment);
             Assert.Equal(2, momentResult.Count);
-            Assert.Equal(momentExpectedResult, momentResult);
+            Assert.Equal(momentExpectedResult.OrderBy(s => s).ToList(), momentResult.OrderBy(s => s).ToList());
 
             List<string> linuxExpectedResult = new()
             {
@@ -203,7 +203,7 @@
             };
             List<string> linuxResult = Guesser.GuessFormat("01.02.2020", Format.Linux);
             Assert.Equal(2, linuxResult.Count);
-            Assert.Equal(linuxExpectedResult, linuxResult);
+            Assert.Equal(linuxExpectedResult.OrderBy(s => s).ToList(), linuxResult.OrderBy(s => s).ToList());
         }
 
         [Fact]
@@ -216,7 +216,7 @@
             };
             List<string> momentResult = Guesser.GuessFormat("01-02-2020", Format.Moment);
             Assert.Equal(2, momentResult.Count);
-            Assert.Equal(momentExpectedResult, momentResult);
+            Assert.Equal(momentExpectedResult.OrderBy(s => s).ToList(), momentResult.OrderBy(s => s).ToList());
 
             List<string> linuxExpectedResult = new()
             {
@@ -225,7 +225,7 @@
             };
             List<string> linuxResult = Guesser.GuessFormat("01-02-2020", Format.Linux);
             Assert.Equal(2, linuxResult.Count);
-            Assert.Equal(linuxExpectedResult, linuxResult);
+            Assert.Equal(linuxExpectedResult.OrderBy(s => s).ToList(), linuxResult.OrderBy(s => s).ToList());
         }
 
         [Fact]
@@ -322,7 +322,7 @@
             };
             List<string> momentResult = Guesser.GuessFormat("01/02/03", Format.Moment);
             Assert.Equal(3, momentResult.Count);
-            Assert.Equal(momentExpectedResult, momentResult);
+            Assert.Equal(momentExpectedResult.OrderBy(s => s).ToList(), momentResult.OrderBy(s => s).ToList());
 
             List<string> linuxExpectedResult = new()
             {
@@ -332,7 +332,7 @@
             };
             List<string> linuxResult = Guesser.GuessFormat("01/02/03", Format.Linux);
             Assert.Equal(3, linuxResult.Count);
-            Assert.Equal(linuxExpectedResult, linuxResult);
+            Assert.Equal(linuxExpectedResult.OrderBy(s => s).ToList(), linuxResult.OrderBy(s => s).ToList());
         }
 
         [Fact]
@@ -346,7 +346,7 @@
             };
             List<string> momentResult = Guesser.GuessFormat("01/02/03 10:00 PM", Format.Moment);
             Assert.Equal(3, momentResult.Count);
-            Assert.Equal(momentExpectedResult, momentResult);
+            Assert.Equal(momentExpectedResult.OrderBy(s => s).ToList(), momentResult.OrderBy(s => s).ToList());
 
             List<string> linuxExpectedResult = new()
             {
@@ -356,7 +356,7 @@
             };
             List<string> linuxResult = Guesser.GuessFormat("01/02/03 10:00 PM", Format.Linux);
             Assert.Equal(3, linuxResult.Count);
-            Assert.Equal(linuxExpectedResult, linuxResult);
+            Assert.Equal(linuxExpectedResult.OrderBy(s => s).ToList(), linuxResult.OrderBy(s => s).ToList());
         }
 
         [Fact]
@@ -371,7 +371,7 @@
             };
             List<string> momentResult = Guesser.GuessFormat("01.02.03", Format.Moment);
             Assert.Equal(4, momentResult.Count);
-            Assert.Equal(momentExpectedResult, momentResult);
+            Assert.Equal(momentExpectedResult.OrderBy(s => s).ToList(), momentResult.OrderBy(s => s).ToList());
 
             List<string> linuxExpectedResult = new()
             {
@@ -382,7 +382,7 @@
             };
             List<string> linuxResult = Guesser.GuessFormat("01.02.03", Format.Linux);
             Assert.Equal(4, linuxResult.Count);
-            Assert.Equal(linuxExpectedResult, linuxResult);
+            Assert.Equal(linuxExpectedResult.OrderBy(s => s).ToList(), linuxResult.OrderBy(s => s).ToList());
         }
 
         [Fact]
@@ -396,7 +396,7 @@
             };
             List<string> momentResult = Guesser.GuessFormat("01.02.03 10:00 PDT", Format.Moment);
             Assert.Equal(3, momentResult.Count);
-            Assert.Equal(momentExpectedResult, momentResult);
+            Assert.Equal(momentExpectedResult.OrderBy(s => s).ToList(), momentResult.OrderBy(s => s).ToList());
 
             List<string> linuxExpectedResult = new()
             {
@@ -406,7 +406,7 @@
             };
             List<string> linuxResult = Guesser.GuessFormat("01.02.03 10:00 PDT", Format.Linux);
             Assert.Equal(3, linuxResult.Count);
-            Assert.Equal(linuxExpectedResult, linuxResult);
+            Assert.Equal(linuxExpectedResult.OrderBy(s => s).ToList(), linuxResult.OrderBy(s => s).ToList());
         }
 
         [Fact]
@@ -420,7 +420,7 @@
             };
             List<string> momentResult = Guesser.GuessFormat("01.02.03 10.00 PDT", Format.Moment);
             Assert.Equal(3, momentResult.Count);
-            Assert.Equal(momentExpectedResult, momentResult);
+            Assert.Equal(momentExpectedResult.OrderBy(s => s).ToList(), momentResult.OrderBy(s => s).ToList());
 
             List<string> linuxExpectedResult = new()
             {
@@ -430,7 +430,7 @@
             };
             List<string> linuxResult = Guesser.GuessFormat("01.02.03 10.00 PDT", Format.Linux);
             Assert.Equal(3, linuxResult.Count);
-            Assert.Equal(linuxExpectedResult, linuxResult);
+            Assert.Equal(linuxExpectedResult.OrderBy(s => s).ToList(), linuxResult.OrderBy(s => s).ToList());
         }
 
         [Fact]
@@ -444,7 +444,7 @@
             };
             List<string> momentResult = Guesser.GuessFormat("01-02-03", Format.Moment);
             Assert.Equal(3, momentResult.Count);
-            Assert.Equal(momentExpectedResult, momentResult);
+            Assert.Equal(momentExpectedResult.OrderBy(s => s).ToList(), momentResult.OrderBy(s => s).ToList());
 
             List<string> linuxExpectedResult = new()
             {
@@ -454,7 +454,7 @@
             };
             List<string> linuxResult = Guesser.GuessFormat("01-02-03", Format.Linux);
             Assert.Equal(3, linuxResult.Count);
-            Assert.Equal(linuxExpectedResult, linuxResult);
+            Assert.Equal(linuxExpectedResult.OrderBy(s => s).ToList(), linuxResult.OrderBy(s => s).ToList());
         }
 
         [Fact]
@@ -467,7 +467,7 @@
             };
             List<string> momentResult = Guesser.GuessFormat("13/02/01", Format.Moment);
             Assert.Equal(2, momentResult.Count);
-            Assert.Equal(momentExpectedResult, momentResult);
+            Assert.Equal(momentExpectedResult.OrderBy(s => s).ToList(), momentResult.OrderBy(s => s).ToList());
 
             List<string> linuxExpectedResult = new()
             {
@@ -476,7 +476,7 @@
             };
             List<string> linuxResult = Guesser.GuessFormat("13/02/01", Format.Linux);
             Assert.Equal(2, linuxResult.Count);
-            Assert.Equal(linuxExpectedResult, linuxResult);
+            Assert.Equal(linuxExpectedResult.OrderBy(s => s).ToList(), linuxResult.OrderBy(s => s).ToList());
         }
 
         [Fact]
@@ -490,7 +490,7 @@
             };
             List<string> momentResult = Guesser.GuessFormat("13.02.01", Format.Moment);
             Assert.Equal(3, momentResult.Count);
-            Assert.Equal(momentExpectedResult, momentResult);
+            Assert.Equal(momentExpectedResult.OrderBy(s => s).ToList(), momentResult.OrderBy(s => s).ToList());
 
             List<string> linuxExpectedResult = new()
             {
@@ -500,7 +500,7 @@
             };
             List<string> linuxResult = Guesser.GuessFormat("13.02.01", Format.Linux);
             Assert.Equal(3, linuxResult.Count);
-            Assert.Equal(linuxExpectedResult, linuxResult);
+            Assert.Equal(linuxExpectedResult.OrderBy(s => s).ToList(), linuxResult.OrderBy(s => s).ToList());
         }
 
         [Fact]
@@ -570,7 +570,7 @@
             };
             List<string> momentResult = Guesser.GuessFormat("01/01", Format.Moment);
             Assert.Equal(3, momentResult.Count);
-            Assert.Equal(momentExpectedResult, momentResult);
+            Assert.Equal(momentExpectedResult.OrderBy(s => s).ToList(), momentResult.OrderBy(s => s).ToList());
 
             List<string> linuxExpectedResult = new()
             {
@@ -580,7 +580,7 @@
             };
             List<string> linuxResult = Guesser.GuessFormat("01/01", Format.Linux);
             Assert.Equal(3, linuxResult.Count);
-            Assert.Equal(linuxExpectedResult, linuxResult);
+            Assert.Equal(linuxExpectedResult.OrderBy(s => s).ToList(), linuxResult.OrderBy(s => s).ToList());
         }
 
         [Fact]
@@ -590,21 +590,23 @@
             {
                 "YY.MM",
                 "DD.MM",
+                "MM.DD",
                 "HH.mm",
             };
             List<string> momentResult = Guesser.GuessFormat("01.01", Format.Moment);
-            Assert.Equal(3, momentResult.Count);
-            Assert.Equal(momentExpectedResult, momentResult);
+            Assert.Equal(4, momentResult.Count);
+            Assert.Equal(momentExpectedResult.OrderBy(s => s).ToList(), momentResult.OrderBy(s => s).ToList());
 
             List<string> linuxExpectedResult = new()
             {
                 "%y.%m",
                 "%d.%m",
+                "%m.%d",
                 "%H.%M",
             };
             List<string> linuxResult = Guesser.GuessFormat("01.01", Format.Linux);
-            Assert.Equal(3, linuxResult.Count);
-            Assert.Equal(linuxExpectedResult, linuxResult);
+            Assert.Equal(4, linuxResult.Count);
+            Assert.Equal(linuxExpectedResult.OrderBy(s => s).ToList(), linuxResult.OrderBy(s => s).ToList());
         }
 
         [Fact]
@@ -614,11 +616,11 @@
             {
                 "YY-MM",
                 "DD-MM",
-                "HH-mm",
+                "MM-DD",
             };
             List<string> momentResult = Guesser.GuessFormat("01-01", Format.Moment);
             Assert.Equal(3, momentResult.Count);
-            Assert.Equal(momentExpectedResult, momentResult);
+            Assert.Equal(momentExpectedResult.OrderBy(s => s).ToList(), momentResult.OrderBy(s => s).ToList());
 
             List<string> linuxExpectedResult = new()
             {
@@ -628,7 +630,7 @@
             };
             List<string> linuxResult = Guesser.GuessFormat("01-01", Format.Linux);
             Assert.Equal(3, linuxResult.Count);
-            Assert.Equal(linuxExpectedResult, linuxResult);
+            Assert.Equal(linuxExpectedResult.OrderBy(s => s).ToList(), linuxResult.OrderBy(s => s).ToList());
         }
 
         [Fact]
@@ -648,7 +650,7 @@
             };
             List<string> momentResult = Guesser.GuessFormat("12.31", Format.Moment);
             Assert.Equal(2, momentResult.Count);
-            Assert.Equal(momentExpectedResult, momentResult);
+            Assert.Equal(momentExpectedResult.OrderBy(s => s).ToList(), momentResult.OrderBy(s => s).ToList());
 
             List<string> linuxExpectedResult = new()
             {
@@ -657,7 +659,7 @@
             };
             List<string> linuxResult = Guesser.GuessFormat("12.31", Format.Linux);
             Assert.Equal(2, linuxResult.Count);
-            Assert.Equal(linuxExpectedResult, linuxResult);
+            Assert.Equal(linuxExpectedResult.OrderBy(s => s).ToList(), linuxResult.OrderBy(s => s).ToList());
         }
 
         [Fact]
@@ -677,7 +679,7 @@
             };
             List<string> momentResult = Guesser.GuessFormat("31/12", Format.Moment);
             Assert.Equal(2, momentResult.Count);
-            Assert.Equal(momentExpectedResult, momentResult);
+            Assert.Equal(momentExpectedResult.OrderBy(s => s).ToList(), momentResult.OrderBy(s => s).ToList());
 
             List<string> linuxExpectedResult = new()
             {
@@ -686,7 +688,7 @@
             };
             List<string> linuxResult = Guesser.GuessFormat("31/12", Format.Linux);
             Assert.Equal(2, linuxResult.Count);
-            Assert.Equal(linuxExpectedResult, linuxResult);
+            Assert.Equal(linuxExpectedResult.OrderBy(s => s).ToList(), linuxResult.OrderBy(s => s).ToList());
         }
 
         [Fact]
@@ -699,7 +701,7 @@
             };
             List<string> momentResult = Guesser.GuessFormat("31.12", Format.Moment);
             Assert.Equal(2, momentResult.Count);
-            Assert.Equal(momentExpectedResult, momentResult);
+            Assert.Equal(momentExpectedResult.OrderBy(s => s).ToList(), momentResult.OrderBy(s => s).ToList());
 
             List<string> linuxExpectedResult = new()
             {
@@ -708,7 +710,7 @@
             };
             List<string> linuxResult = Guesser.GuessFormat("31.12", Format.Linux);
             Assert.Equal(2, linuxResult.Count);
-            Assert.Equal(linuxExpectedResult, linuxResult);
+            Assert.Equal(linuxExpectedResult.OrderBy(s => s).ToList(), linuxResult.OrderBy(s => s).ToList());
         }
 
         [Fact]
@@ -721,7 +723,7 @@
             };
             List<string> momentResult = Guesser.GuessFormat("31-12", Format.Moment);
             Assert.Equal(2, momentResult.Count);
-            Assert.Equal(momentExpectedResult, momentResult);
+            Assert.Equal(momentExpectedResult.OrderBy(s => s).ToList(), momentResult.OrderBy(s => s).ToList());
 
             List<string> linuxExpectedResult = new()
             {
@@ -730,7 +732,8 @@
             };
             List<string> linuxResult = Guesser.GuessFormat("31-12", Format.Linux);
             Assert.Equal(2, linuxResult.Count);
-            Assert.Equal(linuxExpectedResult, linuxResult);
+            Assert.Equal(linuxExpectedResult.OrderBy(s => s).ToList(), linuxResult.OrderBy(s => s).ToList());
+
         }
     }
 }

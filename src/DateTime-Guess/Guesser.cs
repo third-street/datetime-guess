@@ -203,7 +203,8 @@
         /// <returns>Returns a list of formats that match the date.</returns>
         public static List<string> GuessFormat(string date, Format format = Format.Java)
         {
-            List<ParsedResult> refinedParsedResults = Refine(Parse(date));
+            List<ParsedResult> parsedResults = Parse(date);
+            List<ParsedResult> refinedParsedResults = Refine(parsedResults);
             if (refinedParsedResults.Count == 0)
             {
                 throw new Exception("Couldn't parse date.");
@@ -211,13 +212,17 @@
 
             refinedParsedResults.ForEach(r =>
             {
-                Assign(r.Tokens, format);
+                r.Tokens = Assign(r.Tokens, format);
             });
 
             List<string> matchedFormats = new();
             refinedParsedResults.ForEach(r =>
             {
-                matchedFormats.Add(GetFormatString(r.Tokens));
+                string formatString = GetFormatString(r.Tokens);
+                if (!matchedFormats.Contains(formatString))
+                {
+                    matchedFormats.Add(formatString);
+                }
             });
 
             return matchedFormats;
@@ -240,7 +245,12 @@
 
         internal static List<ParsedResult> Refine(List<ParsedResult> parsedResults)
         {
-            List<ParsedResult> refinedParsedResults = parsedResults;
+            List<ParsedResult> refinedParsedResults = new List<ParsedResult>();
+            parsedResults.ForEach(result =>
+            {
+                refinedParsedResults.Add(result);
+            });
+
             _refinders.ForEach(refiner =>
             {
                 refinedParsedResults.AddRange(refiner.Refine(refinedParsedResults));
@@ -249,7 +259,7 @@
             return refinedParsedResults;
         }
 
-        internal static void Assign(List<Token> tokens, Format format)
+        internal static List<Token> Assign(List<Token> tokens, Format format)
         {
             List<Assigner> assigners = new();
 
@@ -264,9 +274,11 @@
             {
                 tokens.ForEach(token =>
                 {
-                    assigner.Assign(token);
+                    token = assigner.Assign(token);
                 });
             });
+
+            return tokens;
         }
 
         internal static string GetFormatString(List<Token> tokens)
