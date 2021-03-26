@@ -19,11 +19,15 @@
             if (format == Format.Java)
             {
                 Map.Add(new Regex(@"\d{1,3}"), "D");
-                Map.Add(new Regex(@"\d{3}"), "DDD");
                 Map.Add(new Regex(@"\d{1,3}st"), "D'st'");
                 Map.Add(new Regex(@"\d{1,3}nd"), "D'nd'");
                 Map.Add(new Regex(@"\d{1,3}rd"), "D'rd'");
                 Map.Add(new Regex(@"\d{1,3}th"), "D'th'");
+                Map.Add(new Regex(@"\d{3}"), "DDD");
+                Map.Add(new Regex(@"\d{3}st"), "DDD'st'");
+                Map.Add(new Regex(@"\d{3}nd"), "DDD'nd'");
+                Map.Add(new Regex(@"\d{3}rd"), "DDD'rd'");
+                Map.Add(new Regex(@"\d{3}th"), "DDD'th'");
             }
             else if (format == Format.Moment)
             {
