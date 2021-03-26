@@ -3,6 +3,13 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>DateTime_Guess</RootNamespace>
+    <ReleaseVersion>1.2.1</ReleaseVersion>
+    <PackageVersion>1.2.1</PackageVersion>
+    <Authors>Alex Todd</Authors>
+    <PackageLicenseUrl>https://github.com/at0dd/dotnet-datetime-guess/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/at0dd/dotnet-datetime-guess</PackageProjectUrl>
+    <Title>DateTime-Guess</Title>
+    <Description>A utility for guessing a datetime format.</Description>
   </PropertyGroup>
 
   <ItemGroup>

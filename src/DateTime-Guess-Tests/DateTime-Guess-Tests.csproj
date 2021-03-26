@@ -5,6 +5,7 @@
     <RootNamespace>DateTime_Guess_Tests</RootNamespace>
 
     <IsPackable>false</IsPackable>
+    <ReleaseVersion>1.2.1</ReleaseVersion>
   </PropertyGroup>
 
   <ItemGroup>
