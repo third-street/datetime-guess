@@ -1,65 +1,57 @@
-<h1 align="center">Welcome to moment-guess 👋<br> <img src="./logo.png" /></h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.2.1-blue.svg?cacheSeconds=2592000" />
-  <a href="https://github.com/apoorv-mishra/moment-guess#readme" target="_blank">
-    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
-  </a>
-  <a href="https://github.com/apoorv-mishra/moment-guess/graphs/commit-activity" target="_blank">
-    <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
-  </a>
-  <a href="https://github.com/apoorv-mishra/moment-guess/blob/master/LICENSE" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/github/license/apoorv-mishra/moment-guess" />
-  </a>
-</p>
+<h1 align="center">Welcome to dotnet-datetime-guess 👋<br> <img src="./logo.png" /></h1>
+
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/at0dd/dotnet-datetime-guess/.NET)
+![Release Version](https://img.shields.io/github/v/release/at0dd/dotnet-datetime-guess)
+![Nuget Version](https://img.shields.io/nuget/v/datetime-guess)
+![Nuget Downloads](https://img.shields.io/nuget/dt/datetime-guess)
 
 > :tada: A utility package for guessing date's format :alarm_clock: :raised_hands:
 
-<img alt="Demo" src="./demo.gif" />
-
 ## 👨‍💻 Usage
 
-### 💻 CLI
+### Package
 
-```sh
-# output default format
-npx moment-guess --date "Fri, January 30th 2020, 10:00 AM"
-
-# output strftime format
-npx moment-guess --date "31st Dec, 2020" --format strftime
-```
-For details, try `npx moment-guess --help`
-
-#### 📝 Note: The above commands DO NOT INSTALL the package system-wide, *npx* is just a [package runner](https://blog.npmjs.org/post/162869356040/introducing-npx-an-npm-package-runner).
-
-### 📦 Package
-
-```sh
-npm install moment-guess
+Install from Powershell
+```ps1
+Nuget-Install 'DateTime-Guess'
 ```
 
-```javascript
-const guessFormat = require('moment-guess');
+Install from .NET CLI
+```ps1
+dotnet add package 'DateTime-Guess'
+```
 
-// default format
-console.log(guessFormat("31/12/2020")); // DD/MM/YYYY
+### Formats
+Format is a public enumerator.
+```c#
+// output default format (Java)
+List<string> = Guesser.GuessFormat("Fri, January 30th 2020, 10:00 AM")
+List<string> = Guesser.GuessFormat("Fri, January 30th 2020, 10:00 AM", Format.Java)
 
-// default format
-console.log(guessFormat("01/01/2020 10:00 AM PST", "default")); // [ 'DD/MM/YYYY hh:mm A z', 'MM/DD/YYYY hh:mm A z' ]
+// output Moment.js format
+List<string> = Guesser.GuessFormat("31st Dec, 2020", Format.Moment)
 
-// strftime format
-console.log(guessFormat("Fri, January 30th 2020, 10:00 AM", "strftime")); // %a, %B %o %Y, %I:%M %p
+// output strftime format
+List<string> = Guesser.GuessFormat("31st Dec, 2020", Format.Linux)
+```
 
-// Errors!
-try {
-	console.log(guessFormat("Invalid date!"));
-} catch (err) {
-	console.log(err.message); // Couldn't parse date
-}
+### Code Example
+```c#
+using DateTime_Guess;
 
-try {
-	console.log(guessFormat("Mo, 23rd Nov, 2020", "strftime"));
-} catch(err) {
-	console.log(err.message); // Couldn't find strftime modifier for "Mo"
+public class GetDateFormatExample
+{
+    public static List<string> GetDateFormat(string date)
+    {
+        try {
+            return Guesser.GuessFormat(date, Format.Java);
+        }
+        catch (Exception e)
+        {
+            // "Couldn't parse date."
+            // "Couldn't find a modifier for x."
+        }
+    }
 }
 ```
 
@@ -75,21 +67,7 @@ try {
 - *Fri, January 30th 2020, 10:00 AM*(dow, dd Mon yyyy[, hh:mm:ss am|pm|AM|PM] with both short and long names)
 
 ## 🤷‍♀️ What happens in case of ambiguous input?
-If the input is ambiguous like 01/01/2020(could mean DD/MM/YYYY or MM/DD/YYYY), **it would display all possible matched formats**. Try `npx -q moment-guess -d "01/01/2020"`
-
-## :thinking: Motivation
-
-**PM**: *Hey, could you please display date on the rightmost part of the row in a format similar to Fri, 6th March 2020, 10:00 AM?*
-
-**Me**: *Sure. (types on screen ... moment(timestampFromDB).format(// Uh Oh!, what should I put here?))*
-
-**Methinks**: *Hmm...such requirements pop up once in a while, not everyday(at least for me). And everytime it happens, I end up sifting through momentjs docs [here](https://momentjs.com/docs/#/displaying/) to choose the right format tokens in order to display date in the desired format("ddd, Do MMMM YYYY, hh:mm A" in this case). Can this be avoided? Is it possible to guess a date's format from the desired date value itself?*
-
-## :hammer: Run tests
-
-```sh
-npm run test
-```
+If the input is ambiguous like 01/01/2020 (could mean DD/MM/YYYY or MM/DD/YYYY), **it would return all possible matched formats**.
 
 ## :mag: How does it work?
 <img src="./design.png"/>
@@ -101,30 +79,3 @@ Entire module is split up into three main components, _parsers_, _refiners_ and 
 * _Refiners_ refine the parsed results based on certain chosen heuristics in case the input matched multiple parsers.
 
 * _Assigners_ assign the appropriate format tokens(don't confuse these with generated tokens from input) enlisted [here](https://momentjs.com/docs/#/displaying/) to each corresponding token based on the meaning given to the token by the parser(example, *YYYY* for a four digit year token).
-
-## :man: Author
-
-**Apoorv Mishra**
-
-* Github: [@apoorv-mishra](https://github.com/apoorv-mishra)
-* LinkedIn: [Apoorv Mishra](https://www.linkedin.com/in/apoorv-mishra-76a06249/)
-
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/apoorv-mishra/moment-guess/issues). 
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-<a href="https://www.patreon.com/apoorvmishra">
-  <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
-</a>
-
-## 📝 License
-
-Copyright © 2020 [Apoorv Mishra](https://github.com/apoorv-mishra).<br />
-This project is [MIT](https://github.com/apoorv-mishra/moment-guess/blob/master/LICENSE) licensed.
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
