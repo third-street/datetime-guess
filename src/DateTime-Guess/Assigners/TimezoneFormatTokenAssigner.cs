@@ -25,8 +25,8 @@
             {
                 Map.Add(new Regex(@"[+-]\d{2}(?::\d{2})?"), "X");
                 Map.Add(new Regex(@"[+-]\d{4}"), "Z");
-                Map.Add(new Regex(@"Z"), "Z");
-                Map.Add(new Regex(@"z"), "z");
+                Map.Add(new Regex(@"Z"), "'Z'");
+                Map.Add(new Regex(@"z"), "'z'");
                 Map.Add(_abbreviatedTimezoneRegex, "z");
             }
             else if (format == Format.Moment)

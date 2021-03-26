@@ -18,9 +18,9 @@
         {
             if (format == Format.Java)
             {
-                Map.Add(new Regex(@"\d"), "s");
-                Map.Add(new Regex(@"\d{2}"), "ss");
-                Map.Add(new Regex(@"\d{3}"), "sss");
+                Map.Add(new Regex(@"\d"), "S");
+                Map.Add(new Regex(@"\d{2}"), "SS");
+                Map.Add(new Regex(@"\d{3}"), "SSS");
             }
             else if (format == Format.Moment)
             {

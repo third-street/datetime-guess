@@ -21,7 +21,11 @@
         /// <inheritdoc/>
         public override Token Assign(Token token)
         {
-            // noop
+            if (Format == Format.Java && token.Value == "T")
+            {
+                token.Format = $"'{token.Value}'";
+            }
+
             return token;
         }
     }

@@ -18,7 +18,7 @@
         {
             if (format == Format.Java)
             {
-                Map.Add(new Regex(@"[1-7]"), "F");
+                Map.Add(new Regex(@"[1-7]"), "u");
             }
             else if (format == Format.Moment)
             {

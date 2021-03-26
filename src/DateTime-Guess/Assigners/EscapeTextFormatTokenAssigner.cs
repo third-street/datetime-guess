@@ -23,7 +23,18 @@
         {
             if (TestTokenType(token))
             {
-                token.Format = (Format == Format.Moment) ? $"[{token.Value}]" : token.Value;
+                if (Format == Format.Java)
+                {
+                    token.Format = $"'{token.Value}'";
+                }
+                else if (Format == Format.Moment)
+                {
+                    token.Format = $"[{token.Value}]";
+                }
+                else
+                {
+                    token.Format = token.Value;
+                }
             }
 
             return token;
