@@ -18,8 +18,8 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore src/DateTime-Guess.sln
+      run: dotnet restore src/DateTimeGuess.sln
     - name: Build
-      run: dotnet build --no-restore src/DateTime-Guess.sln
+      run: dotnet build --no-restore src/DateTimeGuess.sln
     - name: Test
-      run: dotnet test --no-build --verbosity normal src/DateTime-Guess.sln
+      run: dotnet test --no-build --verbosity normal src/DateTimeGuess.sln
