@@ -37,7 +37,7 @@ List<string> = Guesser.GuessFormat("31st Dec, 2020", Format.Linux)
 
 ### Code Example
 ```c#
-using DateTime_Guess;
+using DateTimeGuess;
 
 public class GetDateFormatExample
 {
