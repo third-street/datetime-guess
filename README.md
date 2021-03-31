@@ -1,9 +1,9 @@
 <h1 align="center">Welcome to dotnet-datetime-guess 👋<br> <img src="./logo.png" /></h1>
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/at0dd/dotnet-datetime-guess/.NET)
-![Release Version](https://img.shields.io/github/v/release/at0dd/dotnet-datetime-guess)
-![Nuget Version](https://img.shields.io/nuget/v/datetime-guess)
-![Nuget Downloads](https://img.shields.io/nuget/dt/datetime-guess)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/at0dd/datetime-guess/.NET)
+![Release Version](https://img.shields.io/github/v/release/at0dd/datetime-guess)
+![Nuget Version](https://img.shields.io/nuget/v/datetimeguess)
+![Nuget Downloads](https://img.shields.io/nuget/dt/datetimeguess)
 
 > :tada: A utility package for guessing date's format :alarm_clock: :raised_hands:
 
