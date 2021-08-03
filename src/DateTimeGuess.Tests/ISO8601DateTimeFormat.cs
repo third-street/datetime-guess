@@ -117,7 +117,7 @@
         [Fact]
         public void CalendarDateAndTimeWithHoursAndTimezon_Plus_HH_mm()
         {
-            Assert.Equal("yyyy-MM-dd HHX", Guesser.GuessFormat("2013-02-08 09+07:00", Format.Java).FirstOrDefault());
+            Assert.Equal("yyyy-MM-dd HHXXX", Guesser.GuessFormat("2013-02-08 09+07:00", Format.Java).FirstOrDefault());
             Assert.Equal("YYYY-MM-DD HHZ", Guesser.GuessFormat("2013-02-08 09+07:00", Format.Moment).FirstOrDefault());
             Assert.Equal("%Y-%m-%d %H%:z", Guesser.GuessFormat("2013-02-08 09+07:00", Format.Linux).FirstOrDefault());
         }
@@ -141,7 +141,7 @@
         [Fact]
         public void CalendarDateAndFullTimeWithTimezone_Plus_HH_mm()
         {
-            Assert.Equal("yyyy-MM-dd HH:mm:ss.SSSX", Guesser.GuessFormat("2013-02-08 09:30:26.123+07:00", Format.Java).FirstOrDefault());
+            Assert.Equal("yyyy-MM-dd HH:mm:ss.SSSXXX", Guesser.GuessFormat("2013-02-08 09:30:26.123+07:00", Format.Java).FirstOrDefault());
             Assert.Equal("YYYY-MM-DD HH:mm:ss.SSSZ", Guesser.GuessFormat("2013-02-08 09:30:26.123+07:00", Format.Moment).FirstOrDefault());
             Assert.Equal("%Y-%m-%d %H:%M:%S.%L%:z", Guesser.GuessFormat("2013-02-08 09:30:26.123+07:00", Format.Linux).FirstOrDefault());
         }
@@ -245,7 +245,7 @@
         [Fact]
         public void ShortDateAndTimeWithHoursAndTimezone_PlusHH_mm()
         {
-            Assert.Equal("yyyyMMdd'T'HHX", Guesser.GuessFormat("20130208T09+07:00", Format.Java).FirstOrDefault());
+            Assert.Equal("yyyyMMdd'T'HHXXX", Guesser.GuessFormat("20130208T09+07:00", Format.Java).FirstOrDefault());
             Assert.Equal("YYYYMMDDTHHZ", Guesser.GuessFormat("20130208T09+07:00", Format.Moment).FirstOrDefault());
             Assert.Equal("%Y%m%dT%H%:z", Guesser.GuessFormat("20130208T09+07:00", Format.Linux).FirstOrDefault());
         }
@@ -269,7 +269,7 @@
         [Fact]
         public void ShortDateAndFullTimeWithTimezone_PlusHH_mm()
         {
-            Assert.Equal("yyyyMMdd'T'HHmmss.SSSX", Guesser.GuessFormat("20130208T093026.123+07:00", Format.Java).FirstOrDefault());
+            Assert.Equal("yyyyMMdd'T'HHmmss.SSSXXX", Guesser.GuessFormat("20130208T093026.123+07:00", Format.Java).FirstOrDefault());
             Assert.Equal("YYYYMMDDTHHmmss.SSSZ", Guesser.GuessFormat("20130208T093026.123+07:00", Format.Moment).FirstOrDefault());
             Assert.Equal("%Y%m%dT%H%M%S.%L%:z", Guesser.GuessFormat("20130208T093026.123+07:00", Format.Linux).FirstOrDefault());
         }

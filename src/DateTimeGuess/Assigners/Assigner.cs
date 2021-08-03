@@ -51,11 +51,14 @@
         /// <returns>Return the <see cref="Token"/>.</returns>
         public virtual Token Assign(Token token)
         {
-            foreach (KeyValuePair<Regex, string> kvp in Map)
+            if (TestTokenType(token))
             {
-                if (TestTokenType(token) && kvp.Key.Match(token.Value).Success)
+                foreach (KeyValuePair<Regex, string> kvp in Map)
                 {
-                    token.Format = kvp.Value;
+                    if (kvp.Key.Match(token.Value).Success)
+                    {
+                        token.Format = kvp.Value;
+                    }
                 }
             }
 

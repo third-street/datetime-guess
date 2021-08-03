@@ -5,7 +5,7 @@
     <RootNamespace>DateTimeGuess.Tests</RootNamespace>
 
     <IsPackable>false</IsPackable>
-    <ReleaseVersion>1.2.1</ReleaseVersion>
+    <ReleaseVersion>1.2.2</ReleaseVersion>
   </PropertyGroup>
 
   <ItemGroup>
