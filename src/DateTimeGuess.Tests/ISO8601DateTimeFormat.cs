@@ -75,6 +75,14 @@
         }
 
         [Fact]
+        public void HourMinuteAndSecondTimePart_Timezone()
+        {
+            Assert.Equal("yyyy-MM-dd'T'HH:mm:ssXXX", Guesser.GuessFormat("2013-02-08T09:30:26+00:00", Format.Java).FirstOrDefault());
+            Assert.Equal("YYYY-MM-DDTHH:mm:ssZ", Guesser.GuessFormat("2013-02-08T09:30:26+00:00", Format.Moment).FirstOrDefault());
+            Assert.Equal("%Y-%m-%dT%H:%M:%S%:z", Guesser.GuessFormat("2013-02-08T09:30:26+00:00", Format.Linux).FirstOrDefault());
+        }
+
+        [Fact]
         public void HourMinuteSecondAndMillisecondTimePart()
         {
             Assert.Equal("yyyy-MM-dd'T'HH:mm:ss.SSS", Guesser.GuessFormat("2013-02-08T09:30:26.123", Format.Java).FirstOrDefault());
