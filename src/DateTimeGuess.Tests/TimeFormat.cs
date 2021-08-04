@@ -51,6 +51,22 @@
         }
 
         [Fact]
+        public void HoursMinsAndSecsColonSep24Hour_Timezone()
+        {
+            Assert.Equal("HH:mm:ssXXX", Guesser.GuessFormat("21:22:23+04:00", Format.Java).FirstOrDefault());
+            Assert.Equal("HH:mm:ssZ", Guesser.GuessFormat("21:22:23+04:00", Format.Moment).FirstOrDefault());
+            Assert.Equal("%H:%M:%S%:z", Guesser.GuessFormat("21:22:23+04:00", Format.Linux).FirstOrDefault());
+        }
+
+        [Fact]
+        public void HoursMinsAndSecsColonSep24Hour_Delimiter_Timezone()
+        {
+            Assert.Equal("HH:mm:ss XXX", Guesser.GuessFormat("21:22:23 +04:00", Format.Java).FirstOrDefault());
+            Assert.Equal("HH:mm:ss Z", Guesser.GuessFormat("21:22:23 +04:00", Format.Moment).FirstOrDefault());
+            Assert.Equal("%H:%M:%S %:z", Guesser.GuessFormat("21:22:23 +04:00", Format.Linux).FirstOrDefault());
+        }
+
+        [Fact]
         public void HoursMinsAndSecsDotSep24HourFormat()
         {
             Assert.Equal("HH.mm.ss", Guesser.GuessFormat("21.22.23", Format.Java).FirstOrDefault());
@@ -72,6 +88,30 @@
             Assert.Equal("HH:mm:ss.SSS Z", Guesser.GuessFormat("21:22:23.123 +0000", Format.Java).FirstOrDefault());
             Assert.Equal("HH:mm:ss.SSS ZZ", Guesser.GuessFormat("21:22:23.123 +0000", Format.Moment).FirstOrDefault());
             Assert.Equal("%H:%M:%S.%L %z", Guesser.GuessFormat("21:22:23.123 +0000", Format.Linux).FirstOrDefault());
+        }
+
+        [Fact]
+        public void CompleteTime24HourFormat_TimezoneX()
+        {
+            Assert.Equal("HH:mm:ss.SSS X", Guesser.GuessFormat("21:22:23.123 +00", Format.Java).FirstOrDefault());
+            Assert.Equal("HH:mm:ss.SSS Z", Guesser.GuessFormat("21:22:23.123 +00", Format.Moment).FirstOrDefault());
+            Assert.Equal("%H:%M:%S.%L %:z", Guesser.GuessFormat("21:22:23.123 +00", Format.Linux).FirstOrDefault());
+        }
+
+        [Fact]
+        public void CompleteTime24HourFormat_TimezoneXXX()
+        {
+            Assert.Equal("HH:mm:ss.SSS XXX", Guesser.GuessFormat("21:22:23.123 +00:00", Format.Java).FirstOrDefault());
+            Assert.Equal("HH:mm:ss.SSS Z", Guesser.GuessFormat("21:22:23.123 +00:00", Format.Moment).FirstOrDefault());
+            Assert.Equal("%H:%M:%S.%L %:z", Guesser.GuessFormat("21:22:23.123 +00:00", Format.Linux).FirstOrDefault());
+        }
+
+        [Fact]
+        public void CompleteTime24HourFormat_TimezoneXXX_NoDelimiter()
+        {
+            Assert.Equal("HH:mm:ss.SSSXXX", Guesser.GuessFormat("21:22:23.123+00:00", Format.Java).FirstOrDefault());
+            Assert.Equal("HH:mm:ss.SSSZ", Guesser.GuessFormat("21:22:23.123+00:00", Format.Moment).FirstOrDefault());
+            Assert.Equal("%H:%M:%S.%L%:z", Guesser.GuessFormat("21:22:23.123+00:00", Format.Linux).FirstOrDefault());
         }
 
         [Fact]
