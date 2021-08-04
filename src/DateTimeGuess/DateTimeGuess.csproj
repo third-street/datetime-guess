@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>net5.0</TargetFramework>
 		<RootNamespace>DateTimeGuess</RootNamespace>
 		<ReleaseVersion>1.2.2</ReleaseVersion>
 		<PackageVersion>1.2.2</PackageVersion>
-		<Authors>Alex Todd</Authors>
+		<Authors>ThirdStreet</Authors>
 		<RepositoryUrl>https://github.com/at0dd/datetime-guess</RepositoryUrl>
-		<PackageLicenseUrl>https://github.com/at0dd/datetime-guess/blob/master/LICENSE</PackageLicenseUrl>
-		<PackageProjectUrl>https://github.com/at0dd/datetime-guess</PackageProjectUrl>
+		<PackageLicenseUrl>https://github.com/third-street/datetime-guess/blob/master/LICENSE</PackageLicenseUrl>
+		<PackageProjectUrl>https://github.com/third-street/datetime-guess</PackageProjectUrl>
 		<Title>DateTimeGuess</Title>
 		<Description>A utility for guessing a datetime format.</Description>
 		<PackOnBuild>true</PackOnBuild>
