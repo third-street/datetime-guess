@@ -28,6 +28,14 @@
         }
 
         [Fact]
+        public void Slash_YYYY_MM_DDTHH_mm_ssXXX()
+        {
+            Assert.Equal("yyyy/MM/dd'T'HH:mm:ssXXX", Guesser.GuessFormat("2020/01/01T17:12:34+00:00", Format.Java).FirstOrDefault());
+            Assert.Equal("YYYY/MM/DDTHH:mm:ssZ", Guesser.GuessFormat("2020/01/01T17:12:34+00:00", Format.Moment).FirstOrDefault());
+            Assert.Equal("%Y/%m/%dT%H:%M:%S%:z", Guesser.GuessFormat("2020/01/01T17:12:34+00:00", Format.Linux).FirstOrDefault());
+        }
+
+        [Fact]
         public void Slash_YYYY_MM_DD_hh_mm_A_z()
         {
             Assert.Equal("yyyy/MM/dd hh:mm a z", Guesser.GuessFormat("2020/01/01 10:00 AM IST", Format.Java).FirstOrDefault());
