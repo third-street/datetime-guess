@@ -3,8 +3,8 @@
 	<PropertyGroup>
 		<TargetFramework>net5.0</TargetFramework>
 		<RootNamespace>DateTimeGuess</RootNamespace>
-		<ReleaseVersion>1.2.3</ReleaseVersion>
-		<PackageVersion>1.2.3</PackageVersion>
+		<ReleaseVersion>1.2.4</ReleaseVersion>
+		<PackageVersion>1.2.4</PackageVersion>
 		<Authors>Third Street Software</Authors>
 		<RepositoryUrl>https://github.com/third-street/datetime-guess</RepositoryUrl>
 		<PackageLicenseUrl>https://github.com/third-street/datetime-guess/blob/master/LICENSE</PackageLicenseUrl>
@@ -13,7 +13,7 @@
 		<Description>A utility for guessing a datetime format.</Description>
 		<PackOnBuild>true</PackOnBuild>
 		<Company>Third Street Software</Company>
-		<Version>1.2.3</Version>
+		<Version>1.2.4</Version>
 	</PropertyGroup>
 	<ItemGroup>
 		<Folder Include="Parsers\" />
