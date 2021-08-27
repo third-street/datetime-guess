@@ -44,7 +44,7 @@
         [Fact]
         public void TwoDigitYear()
         {
-            Assert.Equal("d MMM yy HH:mm:ss z", Guesser.GuessFormat("6 Mar 17 21:22:23 UT", Format.Java).FirstOrDefault());
+            Assert.Equal("d MMM yy HH:mm:ss z", Guesser.GuessFormat("6 Mar 17 21:22:23 UTC", Format.Java).FirstOrDefault());
             Assert.Equal("D MMM YY HH:mm:ss z", Guesser.GuessFormat("6 Mar 17 21:22:23 UT", Format.Moment).FirstOrDefault());
             Assert.Equal("%-e %b %y %H:%M:%S %Z", Guesser.GuessFormat("6 Mar 17 21:22:23 UT", Format.Linux).FirstOrDefault());
         }
@@ -52,7 +52,7 @@
         [Fact]
         public void OmitSecondsFromTime()
         {
-            Assert.Equal("d MMM yy HH:mm z", Guesser.GuessFormat("6 Mar 17 21:22 UT", Format.Java).FirstOrDefault());
+            Assert.Equal("d MMM yy HH:mm z", Guesser.GuessFormat("6 Mar 17 21:22 UTC", Format.Java).FirstOrDefault());
             Assert.Equal("D MMM YY HH:mm z", Guesser.GuessFormat("6 Mar 17 21:22 UT", Format.Moment).FirstOrDefault());
             Assert.Equal("%-e %b %y %H:%M %Z", Guesser.GuessFormat("6 Mar 17 21:22 UT", Format.Linux).FirstOrDefault());
         }
